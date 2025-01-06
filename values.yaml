@@ -1,5 +1,5 @@
 name: demo-app
 
 image:
-  repository: nigelpoulton/k8sbook:1.0
+  repository: nigelpoulton/k8sbook
   tag: latest
