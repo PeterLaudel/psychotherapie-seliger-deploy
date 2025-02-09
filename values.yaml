@@ -1,4 +1,4 @@
 name: demo-app
 image:
-  repository: nigelpoulton/k8sbook
+  repository: europe-west10-docker.pkg.dev/psychotherapie-seliger-adm/images/psychotherapie-seliger
   tag: latest
