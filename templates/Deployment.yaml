@@ -16,6 +16,7 @@ spec:
       containers:
       - name: {{ .Values.name | default .Chart.Name }}
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
           name: http
@@ -23,3 +24,5 @@ spec:
           limits:
             memory: 128Mi
             cpu: 0.1
+      imagePullSecrets:
+        - name: gcr-credentials
