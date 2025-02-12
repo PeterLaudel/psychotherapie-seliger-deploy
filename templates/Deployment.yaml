@@ -22,7 +22,7 @@ spec:
           name: http
         resources:
           limits:
-            memory: 128Mi
+            memory: 500Mi
             cpu: 0.1
       imagePullSecrets:
         - name: gcr-credentials
