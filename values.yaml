@@ -1,4 +1,4 @@
 name: demo-app
 image:
   repository: europe-west10-docker.pkg.dev/psychotherapie-seliger-adm/images/psychotherapie-seliger
-  tag: main-32-93aaac0
+  tag: main-39-4cd230b
