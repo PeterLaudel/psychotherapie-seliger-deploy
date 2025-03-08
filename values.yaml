@@ -1,4 +1,4 @@
 name: demo-app
 image:
   repository: europe-west10-docker.pkg.dev/psychotherapie-seliger-adm/images/psychotherapie-seliger
-  tag: latest
+  tag: rework-github-actions-103-ff652b5
