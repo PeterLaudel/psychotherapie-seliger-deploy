@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: argocd
   name: {{ .Values.name }}
 spec:
   replicas: 2
@@ -18,7 +17,7 @@ spec:
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: Always
         ports:
-        - containerPort: 8080
+        - containerPort: 3000
           name: http
         resources:
           requests:
