@@ -15,7 +15,7 @@ spec:
       initContainers:
         - name: migrate
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-          command: ["npm", "run", "db:migrate"]
+          command: ["node", "node_modules/.bin/tsx", "tasks/dbMigrate.ts"]
           env:
             - name: POSTGRES_URL
               valueFrom:
