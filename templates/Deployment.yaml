@@ -24,6 +24,30 @@ spec:
                 key: database-url
           - name: DATABASE_DIALECT
             value: postgres
+          - name: NODE_ENV
+            value: production
+          - name: GOOGLE_CLIENT_ID
+            valueFrom:
+              secretKeyRef:
+                name: app-secrets
+                key: google-client-id
+          - name: GOOGLE_CLIENT_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: app-secrets
+                key: google-client-secret
+          - name: NEXTAUTH_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: app-secrets
+                key: nextauth-secret
+          - name: NEXTAUTH_URL
+            value: https://{{ .Values.ingress.hostname }}
+          - name: PDF_OWNER_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: app-secrets
+                key: pdf-owner-password
         ports:
         - containerPort: 3000
           name: http
