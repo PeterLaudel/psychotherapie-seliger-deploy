@@ -16,6 +16,12 @@ spec:
       - name: {{ .Values.name | default .Chart.Name }}
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: Always
+        env:
+          - name: DATABASE_URL
+            valueFrom:
+              secretKeyRef:
+                name: app-secrets
+                key: database-url
         ports:
         - containerPort: 3000
           name: http
