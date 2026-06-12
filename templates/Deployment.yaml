@@ -12,6 +12,18 @@ spec:
       labels:
         app: {{ .Values.name }}
     spec:
+      initContainers:
+        - name: migrate
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          command: ["npm", "run", "db:migrate"]
+          env:
+            - name: POSTGRES_URL
+              valueFrom:
+                secretKeyRef:
+                  name: app-secrets
+                  key: database-url
+            - name: DATABASE_DIALECT
+              value: postgres
       containers:
       - name: {{ .Values.name | default .Chart.Name }}
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
