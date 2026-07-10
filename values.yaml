@@ -5,4 +5,4 @@ secretStore: ""
 customerName: ""
 image:
   repository: europe-west10-docker.pkg.dev/psychotherapie-seliger-adm/images/psychotherapie-seliger
-  tag: main-324-81b0f14
+  tag: main-332-7c747a7
